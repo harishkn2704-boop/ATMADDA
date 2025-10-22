@@ -45,21 +45,21 @@ def run():
             print("Thank you!")
             break
         try:
-            if opt in ("withdraw", "1"):
+            if opt in ("withdraw", "0"):
                 amt = int(input("Amount: "))
                 bal, tx = svc.withdraw(account, amt)
                 print(tx.print_receipt())
                 print(f"New balance: {bal}")
-            elif opt in ("deposit", "2"):
+            elif opt in ("deposit", "1"):
                 amt = int(input("Amount: "))
                 bal, tx = svc.deposit(account, amt)
                 print(tx.print_receipt())
                 print(f"New balance: {bal}")
-            elif opt in ("balance", "3"):
+            elif opt in ("balance", "2"):
                 bal, tx = svc.balance(account)
                 print(tx.print_receipt())
                 print(f"Balance: {bal}")
-            elif opt in ("mini statement", "mini", "4"):
+            elif opt in ("mini statement", "mini", "3"):
                 txs = svc.mini_statement(account, last_n=5)
                 print("Last transactions:")
                 for t in txs:
